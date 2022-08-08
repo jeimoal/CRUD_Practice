@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<link href="style.css" rel="stylesheet" type="text/css"/>
+	<title>Simple CRUD Practice</title>
+</head>
+<body>
+	<div id="wrapper" class="flxCol">
+		<main id="crud_lyt" class="flxCol">
+			<section id="headerMenu" class="flxCol">
+				<form id="headerForm" class="flxCol" method="POST">
+					<section id="formBtns">
+						<label id="lblCreateBtn">
+							<button id="hCreateBtn">create new</button>
+						</label>
+						<label id="lblDeleteBtn" for="hDeleteBtn" name="hDeleteBtn">
+							<button id="hDeleteBtn">delete all</button>
+						</label>
+					</section>
+					<textarea id="newTxt" placeholder="type a text" hidden></textarea>
+					<label id="addBtnLbl" for="addBtn" name="addBtn">
+						<button id="addBtn" hidden>add entry</button>
+					</label>
+				</form>
+			</section>
+				
+			<section id="crudItem"></section>
+		</main>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+</html>

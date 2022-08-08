@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css?family=Helvetica");
+@import url("https://fonts.googleapis.com/css?family=Verdana");
+
+html {
+	font-family: Helvetica, serif;
+	font-size: 62.5%;
+}
+
+/*utilites start*/
+
+.flx {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.flxCol {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+/*utilites end */
+
+#headerMenu, #crudItem {
+	width: 30rem;
+	height: 14rem;
+	border-radius: 0.5rem;
+	border: 1px solid black;
+}
+
+#headerMenu {
+	padding: 1rem;
+	justify-content: flex-start;	
+}
+
+#newTxt {
+	margin: 1rem;
+	width: 284px;
+	height: 73px;
+	resize: none;
+}
+
+#crudItem {
+	margin-top: 1rem;
+	height: auto;
+	border-style: none;
+}
