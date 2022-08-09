@@ -4,7 +4,6 @@ deleteBtn: null, //access button
 addBtn: null, //access button
 textArea: null, //access textarea button
 
-//initiate items
 init: () => {
 	crudTst.createBtn = document.querySelector('#hCreateBtn');
 	crudTst.deleteBtn = document.querySelector('#hDeleteBtn');
@@ -20,15 +19,15 @@ newCrudItem: () => {
 	crudTst.addBtn.hidden = false;
 },
 
-//create and display a crud item
 addCrudItem: () => {
 	div = document.querySelector('#crudItem');
 	divLyt = document.createElement('div');
 	divLyt.setAttribute('class', 'crudElement');
 	div.appendChild(divLyt);
 
-	crudLayout = document.createElement('span');
+	crudLayout = document.createElement('textarea');
 	crudLayout.className = 'crudDesc';
+	crudLayout.disabled = true;
 	crudTxt = crudTst.textArea.value;
 	crudLayout.textContent = crudTxt;
 	divLyt.appendChild(crudLayout);
@@ -38,6 +37,7 @@ addCrudItem: () => {
 	crudTxt = document.createTextNode('edit');
 	crudLayout.appendChild(crudTxt);
 	divLyt.appendChild(crudLayout);
+	crudLayout = crudTst.editItem();
 
 	crudLayout = document.createElement('button');
 	crudLayout.className = 'crudDel';
@@ -47,14 +47,26 @@ addCrudItem: () => {
 	crudLayout = crudTst.deleteItem();
 },
 
-//does a loop, adding a remove function to every delete button
 deleteItem: () => {
 	let crudDel = document.querySelectorAll('.crudDel');
 	for(i=0; i < crudDel.length; i++) {
 		crudDel[i].onclick = function() {
 			let rmv = this.parentElement.remove();
 		};
-	}
+	};
+},
+
+editItem: () => {
+	let crudEdit = document.querySelectorAll('.crudEdit');
+	for(i=0; i < crudEdit.length; i++) {
+	crudEdit[i].onclick = function() {
+		let descript = document.querySelectorAll('.crudDesc');
+		for(n=0; n < descript.length; n++) {
+			descript[i].disabled = false; //why this returns undefined?
+			this.textContent = 'save';
+			};
+		};
+	};
 },
 
 }
