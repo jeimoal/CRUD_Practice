@@ -62,7 +62,7 @@ editItem: () => {
 	crudEdit[i].onclick = function() {
 		let descript = document.querySelectorAll('.crudDesc');
 		for(n=0; n < descript.length; n++) {
-			descript[i].disabled = false; //why this returns undefined?
+			descript[i].disabled = false; //why it returns undefined?
 			this.textContent = 'save';
 			};
 		};
